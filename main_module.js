@@ -12,7 +12,9 @@
 // const os = require('os'); //운영체제(Operating System:OS), 운영체제 관련 정보를 얻을 수 있다.
 // console.log(os.cpus())
 
+
 const cowsay = require('cowsay');
 console.log(cowsay.say({
-	text: "I love you",
+	text: "Hello!!",
 }));
+
