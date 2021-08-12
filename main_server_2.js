@@ -5,7 +5,7 @@ const { request, response } = require('express');
 
 const app = express(); //express이름 말고 app으로 이름 사용, 이름은 내 맘대로, express는 app을 쓰는 경우가 많다.
 
-
+const users = ['Tom', 'Andy', 'Jessica', 'Paul', 'Yeonwoo']; 
 
 app.get('/', (request, response) => { 
     response.end(`<h1>Welcome!</h1>`);
@@ -20,7 +20,7 @@ app.get('/users/:id', (request, response) => {
     response.end(`<h1>${userName}</h1>`);
 });
 
-app.get('/', (request, response) => {
+app.get('*', (request, response) => {
     response.end(`<h1>Page Not Available</h1>`);
 });
 
