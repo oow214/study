@@ -64,6 +64,7 @@ console.log(typeof z); //number
 console.log(typeof x); //number
 */
 
+/*
 //사칙연산
 console.log('4' - true); //3
 console.log(4 + '2'); //42
@@ -80,4 +81,23 @@ console.log(1 === true); //false
 console.log(1 == '1'); //true
 console.log(1 == true); //true
 //일치비교는 형변환이 없지만 동등비교는 형변환이 일어난다.
+*/
 
+
+//템플릿 문자열(template strings)
+/*
+let myNumber = 3;
+
+function getTwice(x) {
+    return x * 2;
+};
+
+console.log(`${myNumber}의 두 배는 ${getTwice(myNumber)}입니다.`);
+*/
+
+
+//null과 undefined
+let yeonwoo;
+console.log(yeonwoo); //undefined
+yeonwoo = null;
+console.log(yeonwoo); //null
