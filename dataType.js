@@ -34,7 +34,9 @@ typeof (6 * 2 === 11 || 13 - 7 < 7 && !true);
 //typeof false; // boolean
 */
 
+
 //형 변환(Type Conversion)
+/*
 console.log(Number('10') + Number('5'));
 console.log(String(5) + String(10));
 
@@ -60,3 +62,22 @@ let x = Number.MIN_VALUE; //Number 객체의 다른 속성 (0에 가까운 가�
 console.log(typeof y); //number
 console.log(typeof z); //number
 console.log(typeof x); //number
+*/
+
+//사칙연산
+console.log('4' - true); //3
+console.log(4 + '2'); //42
+console.log(4 + 2); //6
+console.log(4 - true); //3
+console.log(4 * false); //0
+console.log(4 / '2'); //2
+console.log('4' ** true); //4
+console.log(4 % 'two'); //NaN
+
+//비교연산 일치, 불일치(!==) / 동등, 부등(!=)
+console.log(1 === '1'); //false
+console.log(1 === true); //false
+console.log(1 == '1'); //true
+console.log(1 == true); //true
+//일치비교는 형변환이 없지만 동등비교는 형변환이 일어난다.
+
