@@ -23,6 +23,7 @@ printSquare(2);
 printSquare(6);
 */
 
+/*
 function printSum(num1, num2) {
     console.log(num1 + num2);
 };
@@ -40,3 +41,19 @@ function introduce(name, birth, nationality, job) {
 };
 
 introduce("김연우", "20020214", "대한민국", "대학생");
+*/
+
+function getTwo() {
+    return 2;
+};
+
+console.log(getTwo());
+console.log(2);
+
+function getTwice(num) {
+    return num * 2;
+};
+
+let x = getTwice(6);
+
+console.log(x);
