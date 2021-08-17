@@ -19,8 +19,6 @@ let x = 3;
 console.log(x > 4 || !(x > 2)); //false
 */
 
-const { type } = require("os");
-
 /*
 //자료형 확인 - typeof
 console.log(typeof 1);
