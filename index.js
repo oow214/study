@@ -1,2 +1,7 @@
-consonle.log("Hello! Yeonwoo!");
-consonle.log("Wow!");
+function hello() {
+    console.log("Hello! Yeonwoo!");
+    console.log("Wow!");
+}
+
+hello();
+hello();
