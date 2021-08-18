@@ -11,3 +11,16 @@ if (temerature <= 0) {
         console.log('물이 모두 수증기가 되었습니다.');
     }
 }
+
+//switch문
+let myChoice = 2;
+switch(myChoice) {
+    case 1:
+        console.log("고양이");
+        break;
+    case 2:
+        console.log("강아지");
+        break;
+    default:
+        console.log("참새");
+}
