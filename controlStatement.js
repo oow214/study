@@ -47,7 +47,7 @@ while (i <= 10) {
     if (i === 7) {
         break;
     } else if (i % 2 === 0) {
-        i++;
+        i++; //만약 증가해주지 않으면 i가 2인채로 무한히 반복한다.
         continue;
     }
     console.log(i);
