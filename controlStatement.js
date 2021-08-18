@@ -1,3 +1,4 @@
+/*
 //if문
 let temerature = 1;
 
@@ -30,4 +31,31 @@ switch(myChoice) {
 for (let i = 1; i <= 10; i++) {
     console.log(`${i} 나는 귀엽다.`);
 }
+
+//while문
+let i = 30;
+while (i % 7 !== 0) {
+    i++;
+}
+
+console.log(i);
+*/
+
+//break와 continue
+let i = 1;
+while (i <= 10) {
+    if (i === 7) {
+        break;
+    } else if (i % 2 === 0) {
+        i++;
+        continue;
+    }
+    console.log(i);
+    i++;
+}
+
+
+
+
+
 
