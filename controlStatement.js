@@ -24,3 +24,10 @@ switch(myChoice) {
     default:
         console.log("참새");
 }
+
+//반복문 (loop statement)
+//for문
+for (let i = 1; i <= 10; i++) {
+    console.log(`${i} 나는 귀엽다.`);
+}
+
