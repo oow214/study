@@ -72,8 +72,36 @@ for (let k in yeonwoo) {
 }
 
 
+//내장객체 - date
+//let myDate = new Date();
+//console.log(myDate); //객체를 생성한 시간이 출력됨
 
+//new Date(milliseconds)
+let myDate = new Date(1000);
+console.log(myDate);
 
+//new Date('YYYY-MM-DD')
+let myDate1 = new Date('2021-02-14');
+console.log(myDate1);
 
+//new Date('YYYY-MM-DDThh:mm:ss')
+let myDate2 = new Date('2021-02-14T14:14:00');
+console.log(myDate2);
+
+//new Date(YYYY, MM, DD, hh, mm, ss, ms)
+//년, 월 필수이며 나머진 생략 가능.
+//month는 시작 숫자가 0이다. 1월은 0월이다.
+let YeonwooDate = new Date(2020, 1);
+console.log(YeonwooDate);
+
+//Date는 일자, Day는 요일
+//요일은 일요일 시작, 0부터 6까지
+console.log(myDate2.getFullYear());
+console.log(myDate2.getMonth());
+console.log(myDate2.getDate());
+console.log(myDate2.getHours());
+console.log(myDate2.getMinutes());
+console.log(myDate2.getSeconds());
+console.log(myDate2.getMilliseconds());
 
 
