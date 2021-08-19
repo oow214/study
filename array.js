@@ -51,6 +51,28 @@ yeonwoo.unshift('prettyYeonwoo');
 
 //배열의 마지막 요소로 값 추가
 yeonwoo.splice(yeonwoo.length, 0, 'HiYeonwoo');
-yeonwoo.push(HiYeonwoo);
+yeonwoo.push('HiYeonwoo');
 
+
+//for..of
+for (let i = 0; i < yeonwoo.length; i++) {
+    console.log(yeonwoo[i]);
+}
+
+for (let element of yeonwoo) {
+    console.log(element);
+}
+
+for (let element in yeonwoo) {
+    console.log(yeonwoo[element]);
+}
+//for..in은 모든 프로퍼티를 가지고 반복하는 동작이기에 배열의 메소드나 배열이 갖고있는 length 프로퍼티 등이 할당되기도 한다.
+//for..in은 객체에 최적화되어있으므로 배열에서는 사용하지 않는 것이 좋다.
+
+
+
+//다차원 배열 (multidimensional array)
+let array = [[1, 2], [3, 4]];
+
+console.log(array[0][1]);
 
