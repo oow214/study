@@ -46,3 +46,20 @@ console.log('name' in yeonwoo);
 //위와 같은 경우를 대비해 안전하게 프로퍼티 값 확인을 위해서 in 사용하기
 //if문 응용도 가능하다.
 
+
+
+//객체의 메소드 (Method)
+let hello = {
+    sayHello: function() {   //함수 이름 설정 없이 바로 설정, 함수 이름은 프로퍼티 네임이 대신해준다.
+        console.log("Hello!"); 
+    },
+    sayHi: function(name) {
+        console.log(`${name} Hi!`);
+    }
+}
+
+hello.sayHello();
+hello.sayHi("Yeonwoo");
+
+hello['sayHello']();
+hello['sayHi']('Yeonwoo');
