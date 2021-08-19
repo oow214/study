@@ -63,3 +63,17 @@ hello.sayHi("Yeonwoo");
 
 hello['sayHello']();
 hello['sayHi']('Yeonwoo');
+
+
+//for..in
+for (let k in yeonwoo) {
+    console.log(`${k}: ${yeonwoo[k]}`);
+    
+}
+
+
+
+
+
+
+
