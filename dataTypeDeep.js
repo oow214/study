@@ -1,7 +1,7 @@
 //숫자표기법
 //지수표기법
 let millionaire = 1000000000;
-let num = 1e9; 
+let num = 1e9;
 
 console.log(millionaire);
 console.log(num);
@@ -82,3 +82,102 @@ console.log(myString.trim());
 console.log(myString.slice(0, 2)); //0부터 1번 인덱스까지 리턴임. end번 직전까지만!
 
 
+//기본형과 참조형
+//기본형은 y에 새 값 할당
+let x = 3;
+let y = x;
+
+console.log(x);
+console.log(y);
+y = 5;
+console.log(x);
+console.log(y);
+
+//참조형은 y에 주소값 할당
+x = { name: 'Yeonwoo' };
+y = x;
+
+console.log(x);
+console.log(y);
+y.binary = 2017
+console.log(x);
+console.log(y);
+
+
+//참조형 복사하기(Reference Type Copy)
+/*
+let num1 = [1, 2, 3];
+let num2 = num1.slice(); //배열은 slice()의 특성을 통해 복사
+
+num2.push(4);
+
+console.log(num1);
+console.log(num2);
+
+
+let who1 = {
+    age: 21,
+    name: "Dabin"
+};
+
+let who2 = Object.assign({}, who1); //메소드 활용
+*/
+/*
+function cloenObject(object) {
+    let temp = {};
+
+    for (let key in object) {
+        temp[key] = object[key];
+    }
+
+    return temp;
+}
+
+let who1 = {
+    age: 21,
+    name: "Dabin"
+};
+
+let who2 = {};
+
+who2 = cloenObject(who1);
+
+who2.name = "Yeonwoo";
+
+
+console.log(who1);
+console.log(who2);
+*/
+function cloenObject(object) {
+    if (object === null || typeof object !== 'object') {
+        return object;
+    }
+
+    let temp;
+    if(Array.isArray(object)) {
+        temp = [];
+    } else {
+        temp = {};
+    }
+
+    for (let key of Object.keys(object)) {
+        temp[key] = cloenObject(object[key]);
+    }
+
+    return temp;
+}
+
+let who1 = {
+    age: 21,
+    name: "Dabin"
+};
+
+let who2 = {};
+
+who2 = cloenObject(who1);
+
+who2.name = "Yeonwoo";
+
+
+console.log(who1);
+console.log(who2);
