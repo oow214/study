@@ -18,10 +18,12 @@ int main(int argc, char **argv) {
     struct hostent *ht;
     struct in_addr addr;
 
+    char *host = argv[1];
+
     // 주소가 도메인이면 도메인 주소로 IP 받아오기
     if (isalpha(host[0])) {
         ht = gethostbyname(host);
-        printf("Domain To IP = %s\n", inet_ntoa(*(struct in_addr*)he->h_addr));
+        printf("Domain To IP = %s\n", inet_ntoa(*(struct in_addr*)ht->h_addr));
     }
     // 주소가 IP 주소이면 도메인 정보 받아오기
     else {
