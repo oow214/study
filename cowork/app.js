@@ -3,7 +3,9 @@ const express = require('express');
 
 const app = express();
 
-let members = require('./members');
+const db = require('./models/index');
+
+const { Member } = db;
 
 app.use(express.json()); 
 
