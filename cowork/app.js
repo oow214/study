@@ -3,7 +3,7 @@ const express = require('express');
 
 const app = express();
 
-const members = require('./members');
+let members = require('./members');
 
 app.use(express.json()); 
 
@@ -34,6 +34,32 @@ app.post('/api/members', (req, res) => {
   members.push(newMember); // 배열에 추가
   res.send(newMember); // 추가한 객체 리스폰스에 담아서 보냄
 });
+
+app.put('/api/members/:id', (req, res) => {
+  const { id } = req.params;
+  const newInfo = req.body; // 새 정보 body에 담기
+  const member = members.find((m) => m.id === Number(id)); // id 찾기
+  if (member) {
+    Object.keys(newInfo).forEach((prop) => { // id 있으면 모든 프로퍼티 수정
+      member[prop] = newInfo[prop];
+    });
+    res.send(member); // 바뀐 정보 담아서 보내기
+  } else {
+    res.status(404).send({ message: 'There is no member with the id!' });
+  }
+});
+
+app.delete('/api/members/:id', (req, res) => {
+  const { id } = req.params;
+  const membersCount = members.length;
+  members = members.filter((member) => member.id !== Number(id));
+  if (members.length < membersCount) {
+    res.send({ message: 'Deleted' });
+  } else {
+    res.status(404).send({ message: 'There is no member with the id!' });
+  }
+});
+
 
 app.listen(3000, () => {
 	console.log('Server is listening...');
