@@ -1,15 +1,17 @@
-// app.js
 const express = require('express');
+const members = require('./members');
 
 const app = express();
 
-const members = require('./members');
-
-app.use(express.json()); 
+app.use(express.json());
+app.use((req, res, next) => {
+  console.log(req.query);
+  next();
+});
 
 app.get('/api/members', (req, res) => {
   const { team } = req.query;
-	if (team) {
+  if (team) {
     const teamMembers = members.filter((m) => m.team === team);
     res.send(teamMembers);
   } else {
@@ -18,24 +20,21 @@ app.get('/api/members', (req, res) => {
 });
 
 app.get('/api/members/:id', (req, res) => {
-	// const id = req.params.id;
-  const { id } = req.params;  // params 객체에서 id라는 프로퍼티의 값만 id라는 변수에 담는 것이다.
+  const { id } = req.params;
   const member = members.find((m) => m.id === Number(id));
   if (member) {
     res.send(member);
   } else {
-    // res.status(404).send('There is no such member');
     res.status(404).send({ message: 'There is no such member' });
   }
 });
 
 app.post('/api/members', (req, res) => {
   const newMember = req.body;
-  members.push(newMember); // 배열에 추가
-  res.send(newMember); // 추가한 객체 리스폰스에 담아서 보냄
+  members.push(newMember);
+  res.send(newMember);
 });
 
 app.listen(3000, () => {
-	console.log('Server is listening...');
+  console.log('Server is listening...');
 });
-
