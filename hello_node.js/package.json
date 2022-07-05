@@ -1,0 +1,26 @@
+{
+  "name": "node_study",
+  "version": "1.0.0",
+  "description": "study Node.js",
+  "main": "main_server_2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oow214/Node.js.git"
+  },
+  "keywords": [
+    "Node.js",
+    "learn"
+  ],
+  "author": "Yeonwoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oow214/Node.js/issues"
+  },
+  "homepage": "https://github.com/oow214/Node.js#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
